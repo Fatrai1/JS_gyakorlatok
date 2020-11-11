@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function binarySearch(arr, search) {
+            let start = 0;
+            let end = arr.lenght -1;
+
+            while (start <= end) {
+                let mid = Math.floor((start + end)/2);
+                if (arr[mid] === search) {
+                    return true
+                }
+                else if(arr[mid] > search) 
+                    start = mid +1;
+                else 
+                end = mid -1;
+                counter += 1;
+            }
+        }
+        return false
+
+
+
+
+        const numbers = [21, 31, 13, 2, 23, 58, 83, 79, 11, 3, 47];
+
+
+
+
+
+
+    </script>
+</body>
+</html>
