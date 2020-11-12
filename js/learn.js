@@ -158,7 +158,7 @@ console.log('10. ' + result2);
 
 
 
-//11. Rendezd a javított buborékos rendezés algoritmus (nézz utána mi az, ha nem ismered) segítségével egy tetszőleges elemszámú, 
+//12. Rendezd a javított buborékos rendezés algoritmus (nézz utána mi az, ha nem ismered) segítségével egy tetszőleges elemszámú, 
 //beágyazott tömb, és objektum kivételével bármilyen típusú elemeket tartalmazó tömb elemeit csökkenő sorrendbe! 
 //A nem szám típusú elemeket rakd a tömb végére az eredeti sorrendbe. Írasd ki a rendezett tömböt!
 
@@ -189,9 +189,9 @@ function customSort (arr) {
     const sortedArr = bubbleSortDecreasing(numbers);
     return sortedArr.concat(notNumbers);
 }
-console.log('11. ' + customSort(numericArray2));
+console.log('12. ' + customSort(numericArray2));
 
-//12. Adott egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb. A tömb elemeit rendezzük növekvő sorrendbe. 
+//13. Adott egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb. A tömb elemeit rendezzük növekvő sorrendbe. 
 //Ezután a felhasználótól kérjünk be egy számot (addig kérjünk be értéket, míg valóban egy véges egész számot ad meg). 
 //A számot szúrjuk be a tömbbe úgy, hogy a tömb továbbra is rendezett maradjon, tehát a megfelelő indexű helyre kerüljön be a plusz elem.
 // Írasd ki a rendezett tömböt!
@@ -202,13 +202,13 @@ function requestNum (arr) {
     const sortedArray = bubbleSortGrowing(arr);
     return sortedArray;
 }
-console.log('12. ' + requestNum(numericArray));
+console.log('13. ' + requestNum(numericArray));
 
 
 
 
 
-//13. Adott egy tömb, mely azonos darabú egész számot, és szöveget tartalmaz véletlenszerű sorrendben. 
+//14. Adott egy tömb, mely azonos darabú egész számot, és szöveget tartalmaz véletlenszerű sorrendben. 
 //Rendezzük úgy a tömböt, hogy minden szám után egy string következzen! Írasd ki a rendezett tömböt!
 
 const numString = [23, 54, 65, 'kettő', 'egy', 'négy', 32, 'negyvenöt'];
@@ -243,8 +243,31 @@ function numAndString (arr) {
     }
     return numString1;
 }
-console.log('13. ' + numAndString(numString));
+console.log('14. ' + numAndString(numString));
 
-// Adott egy tetszőleges pozitív egész számokat tartalmazó tömb. Válogassuk szét külön egy even (páros), és odd (páratlan) nevezetű tömbbe a páros, és páratlan számokat! Írjuk ki a 2 tömböt!
+//15. Adott egy tetszőleges pozitív egész számokat tartalmazó tömb. Válogassuk szét külön egy even (páros), 
+//és odd (páratlan) nevezetű tömbbe a páros, és páratlan számokat! Írjuk ki a 2 tömböt!
 
-// Adott két azonos elemszámú, csak egész számokat tartalmazó tömb. Külön tömbökbe készítsük el a két tömb: metszetét, unióját, különbségét, és descartes szorzatát. Írassuk ki az új tömböket!
+function divorceEven(arr) {
+    let even = [];
+    for(let i =0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            even.push(arr[i]);
+        }
+    }
+    return even;
+}
+function divorceOdd(arr) {
+    let odd = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] % 2 === 1) {
+            odd.push(arr[i])
+        }
+    }
+    return odd;
+}
+console.log('15. ' + divorceEven(numericArray));
+console.log('15. ' + divorceOdd(numericArray));
+
+//16. Adott két azonos elemszámú, csak egész számokat tartalmazó tömb. Külön tömbökbe készítsük el a két tömb: metszetét,
+// unióját, különbségét, és descartes szorzatát. Írassuk ki az új tömböket!
