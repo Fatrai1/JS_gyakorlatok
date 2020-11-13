@@ -78,7 +78,7 @@ function bubbleSortDecreasing(arr) {
     let swapped;
     do {
         swapped = false;
-        for (let i = 0; i < arr.length - 1; i++) {
+        for (let i = 0; i < arr.length; i++) {
             if (arr[i] < arr[i + 1]) {
                 let temp = arr[i];
                 arr[i] = arr[i + 1];
@@ -152,9 +152,24 @@ console.log('10. ' + result2);
 //11. Rendezd a javított buborékos rendezés algoritmus (nézz utána mi az, ha nem ismered) segítségével egy tetszőleges elemszámú, 
 //csak lebegőpontos számokat tartalmazó tömb elemeit növekvő sorrendbe! Írasd ki a rendezett tömböt!
 
+const floating = [1.22, 3.55, 54.65, 34.654, 123.6, 1.1, 0.1, 0.56];
 
-
-
+function bubbleSortGrowing1(arr) {
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
+            }
+        }
+    } while (swapped)
+    return arr;
+}
+console.log('11. ' + bubbleSortGrowing1(floating));
 
 
 
@@ -271,3 +286,43 @@ console.log('15. ' + divorceOdd(numericArray));
 
 //16. Adott két azonos elemszámú, csak egész számokat tartalmazó tömb. Külön tömbökbe készítsük el a két tömb: metszetét,
 // unióját, különbségét, és descartes szorzatát. Írassuk ki az új tömböket!
+const array1 = [1, 32, 65, 54, 879, 35, 26, 765];
+const array2 = [2, 22, 32, 54, 24, 654, 432, 12];
+
+function intersecion(arr1, arr2) {
+    let intersec = [];
+    for( let i = 0; i < arr1.length; i++) {
+        for(let j = 0; j < arr2.length; j++){
+            if(arr1[i] === arr2[j]) {
+                intersec.push(arr1[i]);
+            }
+        }
+    }
+    return intersec;
+}
+
+console.log('16/a. ' + intersecion(array1, array2));
+
+function union(arr1, arr2) {
+    let unio = [];
+    for(let i=0; i < arr1.length; i++) {
+        unio.push(arr1[i], arr2[i]);
+    }
+    return unio;
+}
+console.log('16/b. ' + union(array1, array2));
+
+
+
+
+
+
+function descartes(arr1, arr2) {
+    let descart = [];
+    for (let i = 0; i < arr1.length; i++) {
+        descart.push(arr1[i] * arr2[i]);
+    }
+    return descart;
+}
+console.log('16/d. ' + descartes(array1, array2));
+
