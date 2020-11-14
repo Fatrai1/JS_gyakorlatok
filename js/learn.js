@@ -3,54 +3,66 @@
 
 const numericArray = [21, 31, 13, 2, 23, 58, 83, 79, 11, 3, 1, 47];
 
-
-let smallest = numericArray[0];
-for (let i = 0; i<numericArray.length; i++) {
-if (numericArray[i]<smallest) {
-smallest = numericArray[i];
-    }
+function smallest(arr) {
+    let small = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < small) {
+    small = arr[i];
+        }
+    }    
+    return small;
 }
-console.log(smallest)
+// let small = smallest(numericArray);
+document.querySelector('p.one').innerHTML = ('1. A tömb legkisebb eleme: ' + smallest(numericArray));
+// console.log(smallest(numericArray));
 
 //2. Irasd ki egy tetszőleges számú.... legnagyobb elemét//
-
-let largest = numericArray[0];
-for (let i = 0; i<numericArray.length; i++) {
-if (numericArray[i]>largest) {
-largest = numericArray[i];
+function largest(arr) {
+    let large = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > large) {
+        large = arr[i];
+        }
     }
+    return large;
 }
-console.log(largest)
+document.querySelector("p.two").innerHTML = ('2. A tömb legnagyobb eleme: ' + largest(numericArray));
 
 //3. Irasd ki egy tetszőleges számú.... átlagát//
-
-let sum = 0;					
-for (let i = 0; i < numericArray.length; i++) {
- sum += numericArray[i];
+function average(arr) {
+    let sum = 0;					
+    for (let i = 0; i < arr.length; i++) {
+     sum += arr[i];
+    }
+    let average = sum / 2;	
+    return average;
 }
-let average = sum / 2;	
 
-console.log(average);
+document.querySelector("p.three").innerHTML = ('3. A tömb átlaga: ' + average(numericArray));
 
 //4. Irasd ki egy tetszőleges számú.... összegét.//
-
-        let sum1 = 0;					
-        for (let i = 0; i < numericArray.length; i++) {
-         sum1 += numericArray[i];
-        }
-        console.log('4. '+ sum1);
+function amount(arr) {
+    let sum1 = 0;					
+    for (let i = 0; i < arr.length; i++) {
+     sum1 += arr[i];
+    }
+    return sum1;
+}
+document.querySelector("p.four").innerHTML = ('4. A tömb számainak összeg: ' + amount(numericArray));
 
 
 //5. Irasd ki egy tetszőleges számú.... páros elemeinek a számát.//
 
-
+function pairs(arr) {
     let paros = 0;
-    for (let i = 0; i < numericArray.length; i++) {
-        if (numericArray[i] % 2 == 0) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
             paros += 1;
         }
     }
-console.log('5. ' + paros)
+    return paros;
+}
+document.querySelector("p.five").innerHTML = ('5. A tömb páros elemeinek a száma: ' + pairs(numericArray));
 
 //6. Irasd ki egy tetszőleges számú.... második legkisebb elemét//
 
@@ -69,7 +81,7 @@ function bubbleSortGrowing(arr) {
     } while (swapped)
     return arr;
 }
-console.log(bubbleSortGrowing(numericArray)[1]);
+document.querySelector("p.six").innerHTML = ('6. A tömb második legkisebb eleme: ' + bubbleSortGrowing(numericArray)[1]);
 
 
 //7. Irasd ki egy tetszőleges számú.... harmadik legnagyobb elemét//
@@ -89,7 +101,7 @@ function bubbleSortDecreasing(arr) {
     } while (swapped)
     return arr;
 }
-console.log(bubbleSortDecreasing(numericArray)[2]);
+document.querySelector("p.seven").innerHTML = ('7. A tömb harmadik legnagyobb eleme: ' + bubbleSortDecreasing(numericArray)[2]);
 
 
 
@@ -102,8 +114,8 @@ function find23(arr, num) {
     }
     return false;
 }
-let result = find23(numericArray, 23);
-console.log('8. ' + result);
+document.querySelector("p.eight").innerHTML = ('8. A tömb tartalmazza e a 23-as számot: ' + find23(numericArray, 23));
+
 
 
 
