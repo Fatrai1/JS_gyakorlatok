@@ -142,7 +142,8 @@ function searchNum(arr, num) {
     return false;
 }
 let result1 = searchNum(numericArray, 23);
-console.log('9. ' + result1);
+document.querySelector("p.nine").innerHTML = ('9. A tömb tartalmaz e 23-as számot: ' + result1);
+
    
 
 //10. Írd ki, hogy egy tetszőlegese elemszámú, bármilyen típusú elemeket tartalmazó tömb (feltételezzük, hogy beágyazott tömböt,
