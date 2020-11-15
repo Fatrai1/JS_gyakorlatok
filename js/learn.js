@@ -159,7 +159,8 @@ function howManyTimes(arr, num) {
     return count;
 }
 let result2 = howManyTimes(numericArray, 23);
-console.log('10. ' + result2);
+document.querySelector("p.ten").innerHTML = ('10. A tömb hányszor tartalmazza a 23-as számot: ' + result2);
+
 
 
 //11. Rendezd a javított buborékos rendezés algoritmus (nézz utána mi az, ha nem ismered) segítségével egy tetszőleges elemszámú, 
@@ -182,7 +183,9 @@ function bubbleSortGrowing1(arr) {
     } while (swapped)
     return arr;
 }
-console.log('11. ' + bubbleSortGrowing1(floating));
+document.querySelector("p.eleven1").innerHTML = ('11. A lebegőpontos számok: ' + floating);
+document.querySelector("p.eleven").innerHTML = ('11. Lebegőpontos számok növekvő sorbarendezése: ' + bubbleSortGrowing1(floating));
+
 
 
 
@@ -217,7 +220,9 @@ function customSort (arr) {
     const sortedArr = bubbleSortDecreasing(numbers);
     return sortedArr.concat(notNumbers);
 }
-console.log('12. ' + customSort(numericArray2));
+document.querySelector("p.twelve1").innerHTML = ('12. Bármilyen típusú elemeket tartalmazó tömb: ' + numericArray2);
+document.querySelector("p.twelve").innerHTML = ('12. A rendezett tömb, hátul a nem szám elemekkel: ' + bubbleSortGrowing1(floating));
+
 
 //13. Adott egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb. A tömb elemeit rendezzük növekvő sorrendbe. 
 //Ezután a felhasználótól kérjünk be egy számot (addig kérjünk be értéket, míg valóban egy véges egész számot ad meg). 
@@ -230,7 +235,8 @@ function requestNum (arr) {
     const sortedArray = bubbleSortGrowing(arr);
     return sortedArray;
 }
-console.log('13. ' + requestNum(numericArray));
+document.querySelector("p.thirteen").innerHTML = ('13. Egy szám beszúrása: ' + requestNum(numericArray));
+
 
 
 
@@ -271,7 +277,8 @@ function numAndString (arr) {
     }
     return numString1;
 }
-console.log('14. ' + numAndString(numString));
+document.querySelector("p.fourteen").innerHTML = ('14. Minden szám után jöjjön egy string: ' + numAndString(numString));
+
 
 //15. Adott egy tetszőleges pozitív egész számokat tartalmazó tömb. Válogassuk szét külön egy even (páros), 
 //és odd (páratlan) nevezetű tömbbe a páros, és páratlan számokat! Írjuk ki a 2 tömböt!
@@ -294,8 +301,8 @@ function divorceOdd(arr) {
     }
     return odd;
 }
-console.log('15. ' + divorceEven(numericArray));
-console.log('15. ' + divorceOdd(numericArray));
+document.querySelector("p.fifteen").innerHTML = ('15. A tömb páros elemei: ' + divorceEven(numericArray) + 'és a páratlanok: ' + divorceOdd(numericArray));
+
 
 //16. Adott két azonos elemszámú, csak egész számokat tartalmazó tömb. Külön tömbökbe készítsük el a két tömb: metszetét,
 // unióját, különbségét, és descartes szorzatát. Írassuk ki az új tömböket!
@@ -313,8 +320,20 @@ function intersecion(arr1, arr2) {
     }
     return intersec;
 }
+document.querySelector("p.sixteen1").innerHTML = ('16. A halmazok uniója: ' + intersecion(array1, array2));
 
-console.log('16/a. ' + intersecion(array1, array2));
+function difference(arr1, arr2) {
+    let different = [];
+    for(let i =0; i < arr1.length; i++){
+        for(let j = 0; j < arr2.length; j++){
+            if(arr1[i] != arr2[j]){
+                different.push(arr1[i]);
+            }
+        }
+    }
+    return different;
+}
+document.querySelector("p.sixteen2").innerHTML = ('16. A halmazok különbsége: ' + difference(array1, array2));
 
 function union(arr1, arr2) {
     let unio = [];
@@ -323,7 +342,8 @@ function union(arr1, arr2) {
     }
     return unio;
 }
-console.log('16/b. ' + union(array1, array2));
+document.querySelector("p.sixteen").innerHTML = ('16. A halmazok : ' + union(array1, array2));
+
 
 
 
